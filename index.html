@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Bliss - Realistic 3D Chocolate Crafting</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Floating Ambient Cocoa Particles in Background -->
+    <div class="bg-glow"></div>
+
+      <!-- Local High-Beat Music (Put 'beat.mp3' in your project folder) -->
+    <audio id="bg-music" src="./beat.mp3" autoplay loop preload="auto"></audio>
+
+    <!-- Clean Navbar (Without Music Button) -->
+    <header class="navbar">
+        <div class="logo">Dairy<span>Bliss</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Experience</a></li>
+                <li><a href="#craft">Craftsmanship</a></li>
+                <li><a href="#flavors">Flavors</a></li>
+            </ul>
+        </nav>
+        <a href="#order" class="btn-nav">Order Now</a>
+    </header>
+
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <!-- Left Side: Typewriter & Interactive Steps -->
+        <div class="banner-left">
+            <span class="badge-top">✨ ARTISANAL CHOCOLATE EXPERIENCE</span>
+            <h1 id="typewriter-title"></h1>
+            <p id="typewriter-desc"></p>
+
+            <!-- Interactive Step-by-Step Guide -->
+            <div class="steps-container" id="steps-container">
+                <h3>Click any step to inspect the layer:</h3>
+                <div class="step-item" id="step-1" onclick="inspectLayer(0)">
+                    <span class="step-num">01</span>
+                    <div>
+                        <h4>Velvety Condensed Milk</h4>
+                        <p>Rich, creamy milk poured to form a smooth, sweet foundation.</p>
+                    </div>
+                </div>
+                <div class="step-item" id="step-2" onclick="inspectLayer(1)">
+                    <span class="step-num">02</span>
+                    <div>
+                        <h4>Golden Baked Biscuit</h4>
+                        <p>A crispy, roasted wafer biscuit placed right into the cream.</p>
+                    </div>
+                </div>
+                <div class="step-item" id="step-3" onclick="inspectLayer(2)">
+                    <span class="step-num">03</span>
+                    <div>
+                        <h4>Fine Cocoa Powder Dusting</h4>
+                        <p>Aromatic dark cocoa powder sprinkled for an intense chocolate kick.</p>
+                    </div>
+                </div>
+                <div class="step-item" id="step-4" onclick="inspectLayer(3)">
+                    <span class="step-num">04</span>
+                    <div>
+                        <h4>Silky Milk Chocolate Shell</h4>
+                        <p>Drenched in tempered chocolate & molded into glossy chunks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="startAnimation()" class="btn-replay" id="replay-btn">↻ Replay Full Process</button>
+        </div>
+
+        <!-- Right Side: 3D Interactive Plate & Realistic Layers -->
+        <div class="banner-right">
+            <div class="plate-wrapper" id="plate-tilt">
+                <div class="plate">
+                    <div class="live-tag" id="live-tag">Ready to Unwrap</div>
+
+                    <!-- Cocoa Dust Particle Burst Container -->
+                    <div class="dust-particles" id="dust-particles">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+
+                    <!-- Realistic Chocolate Layers -->
+                    <div class="choco-assembly">
+                        <!-- Layer 1: Glossy Creamy Milk -->
+                        <div class="layer layer-milk" id="layer-milk">
+                            <div class="milk-gloss"></div>
+                        </div>
+
+                        <!-- Layer 2: Textured Crispy Biscuit -->
+                        <div class="layer layer-biscuit" id="layer-biscuit">
+                            <div class="biscuit-grid"></div>
+                        </div>
+
+                        <!-- Layer 3: Velvety Cocoa Powder -->
+                        <div class="layer layer-cocoa" id="layer-cocoa">
+                            <div class="cocoa-texture"></div>
+                        </div>
+
+                        <!-- Layer 4: 3D Molded Chocolate Bar -->
+                        <div class="layer layer-final" id="layer-final">
+                            <div class="chunk"><span>Dairy</span></div>
+                            <div class="chunk"><span>Bliss</span></div>
+                            <div class="chunk"><span>Dairy</span></div>
+                            <div class="chunk"><span>Bliss</span></div>
+                            <div class="chunk"><span>Dairy</span></div>
+                            <div class="chunk"><span>Bliss</span></div>
+                            <div class="shimmer"></div>
+                        </div>
+                    </div>
+
+                    <!-- Crinkled Silver Foil -->
+                    <div class="foil-left" id="foil-left"></div>
+                    <div class="foil-right" id="foil-right"></div>
+
+                    <!-- Premium Purple Wrapper -->
+                    <div class="wrapper-left" id="wrapper-left">
+                        <span>Dairy</span>
+                    </div>
+                    <div class="wrapper-right" id="wrapper-right">
+                        <span>Bliss</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
